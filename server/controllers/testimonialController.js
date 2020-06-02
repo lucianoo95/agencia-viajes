@@ -11,7 +11,7 @@ exports.showTestimonial = async (request, response) => {
 exports.saveTestimonial = async (request, response) => {
   // validar campos vacios
   const { name, email, message } = request.body;
-  let errors = [];
+  let errors = Array.from([]);
 
   if (!name) {
     errors.push({ message: 'Agrega tu nombre' });
