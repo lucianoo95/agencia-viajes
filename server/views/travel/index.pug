@@ -1,0 +1,19 @@
+extends ../layout/index
+block content
+  main.container.mt-5
+    .row
+      .col-md-5
+        img.img-fluid(src=`/img/destinos_${travel.image}.jpg`)
+      .col-md-7
+        h1 #{travel.title}
+        p
+          i.material-icons(style="font-size:22px") date_range
+          |  Fecha ida: #{travel.date_start.split('-').reverse().join('/')} - Fecha vuelta: #{travel.date_end.split('-').reverse().join('/')}
+        p
+          i.material-icons attach_money
+          |  #{travel.price}
+        p
+          i.material-icons accessibility
+          |  #{travel.available} Disponibles
+        p
+          | #{travel.description}

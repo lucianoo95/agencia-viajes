@@ -1,0 +1,16 @@
+.row.proximos-viajes
+  each travel in travels
+    .col-md-6.col-lg-4.mb-4
+      .card
+        img(src=`img/destinos_${travel.image}.jpg`, class="img-fluid")
+        .card-body
+          h2= travel.title
+          p
+            i.material-icons(style="font-size:22px") date_range
+            |  #{travel.date_start.split('-').reverse().join('/')} - #{travel.date_end.split('-').reverse().join('/')}
+          p
+            i.material-icons local_atm
+            |  #{travel.price}
+          p
+            | #{travel.description.substr(0,100)}
+          a(href=`travels/${travel.id}`, class="btn btn-success btn-block") Más informacion
